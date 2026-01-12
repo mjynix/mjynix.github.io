@@ -279,3 +279,20 @@ body{
   .splash{ transition: none; }
   .site.reveal{ transition: none; }
 }
+
+.squiggle {
+  position: relative;
+  display: inline-block;
+}
+
+.squiggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5 Q 15 0 30 5 T 60 5 T 90 5 T 120 5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
