@@ -111,6 +111,15 @@ body{
 
 .label{ color: rgba(0,0,0,0.5); }
 
+.label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+
 /* ===== Portrait ===== */
 .portrait-wrap{
   position: relative;
