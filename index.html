@@ -2,34 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>mjynix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jasmine ma</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- Splash / intro -->
+  <div id="splash" class="splash" aria-hidden="true">
+    <div class="splash-inner">
+      <div class="type-row">
+        <span id="typeText" class="type-text"></span><span class="cursor" aria-hidden="true">|</span>
+      </div>
+      <button id="skipIntro" class="skip-intro" type="button">Skip</button>
+    </div>
+  </div>
 
-  <nav class="nav">
-    <button class="tab-btn active" data-tab="about">About</button>
-    <button class="tab-btn" data-tab="projects">Projects</button>
-    <button class="tab-btn" data-tab="contact">Contact</button>
-  </nav>
+  <!-- Site (hidden until intro finishes) -->
+  <div id="site" class="site hidden">
+    <nav class="nav">
+      <button class="tab-btn active" data-tab="about">About</button>
+      <button class="tab-btn" data-tab="projects">Projects</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+    </nav>
 
-  <main class="card">
-    <section id="about" class="tab active">
-      <h1>Hi, I’m MJ 👋</h1>
-      <p>Welcome to my portfolio. (We’re vibing.)</p>
-    </section>
+    <main class="card">
+      <!-- ABOUT -->
+      <section id="about" class="tab active">
+        <div class="about-grid">
+          <div class="about-left">
+            <h1 class="about-title">
+              Jasmine Ma is a <span class="underline">CS + CogSci</span> student building
+              <span class="underline">human-centered</span> tech.
+            </h1>
 
-    <section id="projects" class="tab">
-      <h1>Projects</h1>
-      <p>Add your projects here ✨</p>
-    </section>
+            <div class="about-body">
+              <p>
+                I’m interested in product, design, and systems that make life easier—especially at the intersection
+                of healthcare and computing.
+              </p>
 
-    <section id="contact" class="tab">
-      <h1>Contact</h1>
-      <p>Email: youremail@example.com</p>
-    </section>
-  </main>
+              <p>
+                Right now I’m building projects, learning fast, and collecting ideas I’m excited to ship.
+              </p>
+
+              <div class="about-contact">
+                <div><span class="label">Contact:</span></div>
+                <div><span class="label">Email</span> — <a href="mailto:youremail@example.com">youremail@example.com</a></div>
+                <div><span class="label">GitHub</span> — <a href="https://github.com/mjynix" target="_blank" rel="noreferrer">@mjynix</a></div>
+                <div><span class="label">LinkedIn</span> — <a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noreferrer">/in/yourhandle</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-right">
+            <div class="portrait-wrap">
+              <!-- Add a photo named portrait.jpg in the repo root -->
+              <img class="portrait" src="portrait.jpg" alt="Portrait of Jasmine Ma" />
+              <div class="doodle doodle-tl"></div>
+              <div class="doodle doodle-br"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="tab">
+        <h1>Projects</h1>
+        <p>Coming soon. This will be a grid of projects with links + short writeups.</p>
+
+        <!-- Optional starter cards (you can delete) -->
+        <div class="projects-grid">
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <div class="proj-title">Project One</div>
+            <div class="proj-meta">Short one-liner about what it does.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <div class="proj-title">Project Two</div>
+            <div class="proj-meta">Another one-liner. Keep it clean.</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="tab">
+        <h1>Contact</h1>
+        <p>
+          Best way to reach me: <a href="mailto:youremail@example.com">youremail@example.com</a>
+        </p>
+        <p>
+          You can also find me on <a href="https://github.com/mjynix" target="_blank" rel="noreferrer">GitHub</a>.
+        </p>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
