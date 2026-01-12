@@ -2,7 +2,7 @@
 
 Hey! This is my personal portfolio website featuring programming work, writing, and more.
 
-🔗 Live site: jjasminema.com
+🔗 Live site: www.jjasminema.com
 
 ## Built With
 - HTML
