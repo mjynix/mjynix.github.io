@@ -236,12 +236,13 @@ body{
 
 .skip-intro{
   background: transparent;
-  border: 1px solid var(--hairline-strong);
+  border: 1px solid rgba(0,0,0,0.35);
   color: rgba(0,0,0,0.70);
   border-radius: 999px;
-  padding: 8px 12px;
+  padding: 12px 24px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .skip-intro:hover{
