@@ -5,19 +5,16 @@ const typeTextEl = document.getElementById("typeText");
 const skipBtn = document.getElementById("skipIntro");
 
 const fullText = "jasmine ma";
-const typeSpeed = 110;     // ms per character
-const holdAfterTyping = 450; // pause after finished typing
+const typeSpeed = 0;     // ms per character
+const holdAfterTyping = 0; // pause after finished typing
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function typeWriter(text) {
-  typeTextEl.textContent = "";
-  for (let i = 0; i < text.length; i++) {
-    typeTextEl.textContent += text[i];
-    await sleep(typeSpeed);
-  }
+  // Instant reveal - set text content immediately
+  typeTextEl.textContent = text;
 }
 
 async function endIntro() {
