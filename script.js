@@ -60,14 +60,54 @@ runIntro();
 // ===== Tabs (your existing functionality) =====
 const buttons = document.querySelectorAll(".tab-btn");
 const tabs = document.querySelectorAll(".tab");
+const tabJumps = document.querySelectorAll(".tab-jump");
+
+function activateTab(id) {
+  if (!id) return;
+
+  buttons.forEach(b => b.classList.remove("active"));
+  document.querySelector(`.tab-btn[data-tab="${id}"]`)?.classList.add("active");
+
+  tabs.forEach(t => t.classList.remove("active"));
+  document.getElementById(id)?.classList.add("active");
+}
 
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const id = btn.dataset.tab;
-    tabs.forEach(t => t.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
+    activateTab(btn.dataset.tab);
   });
 });
+
+tabJumps.forEach(btn => {
+  btn.addEventListener("click", () => {
+    activateTab(btn.dataset.tab);
+  });
+});
+
+
+// ===== Scroll reveal / motion polish =====
+const revealItems = document.querySelectorAll(
+  ".hero-copy, .portrait-card, .panel, .experience-card, .proj-card, .gallery-card, .contact-card"
+);
+
+revealItems.forEach((item, index) => {
+  item.classList.add("revealable");
+  item.style.setProperty("--reveal-delay", `${Math.min(index * 35, 220)}ms`);
+});
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach(item => item.classList.add("in-view"));
+} else {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(item => revealObserver.observe(item));
+}

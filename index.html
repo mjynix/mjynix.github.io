@@ -4,12 +4,15 @@
   <link rel="icon" type="image/png" href="crop fish.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jasmine Ma is a Columbia student building human-centered technology across product, design, healthcare, and computing." />
   <title>jasmine ma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Splash / intro -->
   <div id="splash" class="splash" aria-hidden="true">
     <div class="splash-inner">
       <div class="type-row">
@@ -19,116 +22,331 @@
     </div>
   </div>
 
-  <!-- Site (hidden until intro finishes) -->
   <div id="site" class="site hidden">
-    <nav class="nav">
-      <button class="tab-btn active" data-tab="about">About</button>
-      <button class="tab-btn" data-tab="projects">Projects</button>
-      <button class="tab-btn" data-tab="contact">Contact</button>
-    </nav>
+    <div class="ambient-visual" aria-hidden="true">
+      <span class="sunset-haze haze-one"></span>
+      <span class="sunset-haze haze-two"></span>
+      <span class="sunset-haze haze-three"></span>
+    </div>
 
-    <main class="card">
-      <!-- ABOUT -->
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Jasmine Ma home">
+        <span class="brand-mark">JM</span>
+        <span>jasmine ma</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="gallery">Gallery</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
+      </nav>
+    </header>
+
+    <main>
       <section id="about" class="tab active">
-        <div class="about-grid">
-          <div class="about-left">
-            <h1 class="about-title">
-              Hi! I'm Jasmine Ma, and I'm a <span class="underline">CogSci + CS</span> student at Columbia University passionate about
-              <span class="underline">human-centered</span> tech.
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <p class="eyebrow">CS + Cognitive Science @ Columbia · Research @ Scripps · Startup Engineer</p>
+            <h1 class="hero-title">
+              Designing thoughtful systems for people, health, and everyday life.
             </h1>
+            <p class="hero-intro">
+              Hi, I'm Jasmine Ma. I build at the intersection of product, design, healthcare, AI, and computing, with a focus on technology that feels useful, humane, and quietly powerful.
+            </p>
 
-            <div class="about-body">
-              <p>
-                I’m interested in product, design, and systems that make life easier—especially at the intersection
-                of healthcare and computing. Outside of school, I'm an avid dancer, pianist, and mentor for young girls in tech.
-              </p>
-
-              <p>
-                Right now I’m located in <span class="squiggle">NYC</span> building projects, learning fast, and collecting ideas I’m excited to bring to life.
-              </p>
-
-              <p> <span class="label">Currently</span><br>
-                  Columbia College, Columbia University in the City of New York</p>
-                  
-              <p> <span class="label">Formerly</span><br>
-                Thomas Jefferson High School for Science and Technology, Washington DC Metro<br>
-                Scripps Research Translational Institute, San Diego<br>
-                Dartmouth-Hitchcock Medical Center<br>
-                School of Systems Biology @ George Mason University
-              </p>
-
-
-              <div class="about-contact">
-                <div><span class="label">Contact:</span></div>
-                <div><span class="label">Email</span> — <a href="mailto:jasmine.ma@columbia.edu">jasmine.ma@columbia.edu</a></div>
-                <div><span class="label">GitHub</span> — <a href="https://github.com/mjynix" target="_blank" rel="noreferrer">@mjynix</a></div>
-                <div><span class="label">LinkedIn</span> — <a href="https://www.linkedin.com/in/jasminexma" target="_blank" rel="noreferrer">/in/jasminexma</a></div>
-              </div>
+            <div class="hero-actions">
+              <a class="primary-link" href="mailto:jasmine.ma@columbia.edu">Contact me</a>
+              <button class="secondary-link tab-jump" data-tab="projects" type="button">View work</button>
             </div>
           </div>
 
-          <div class="about-right">
-            <div class="portrait-wrap">
-              <!-- Add a photo named portrait.jpg in the repo root -->
+          <aside class="portrait-card" aria-label="Portrait and current focus">
+            <div class="portrait-frame">
               <img class="portrait" src="portrait.jpg" alt="Portrait of Jasmine Ma" />
-              <div class="doodle doodle-tl"></div>
-              <div class="doodle doodle-br"></div>
             </div>
+            <div class="focus-note">
+              <span class="note-label">Currently</span>
+              <p>Building projects in NYC, learning fast, and collecting ideas worth bringing to life.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="about-panels">
+          <article class="panel intro-panel">
+            <span class="panel-kicker">What I care about</span>
+            <p>
+              I'm interested in product, design, and systems that make life easier, especially at the intersection of healthcare and computing. Outside of school, I'm an avid dancer, pianist, and mentor for young girls in tech.
+            </p>
+          </article>
+
+          <article class="panel">
+            <span class="panel-kicker">Education</span>
+            <h2>Columbia University</h2>
+            <p>New York City</p>
+          </article>
+
+          <article class="panel">
+            <span class="panel-kicker">Previously</span>
+            <ul class="timeline-list">
+              <li>Thomas Jefferson High School for Science and Technology</li>
+              <li>Scripps Research Translational Institute</li>
+              <li>Dartmouth-Hitchcock Medical Center</li>
+              <li>School of Systems Biology @ George Mason University</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="tab">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h1>Projects, research, and experiences</h1>
+          <p>Selected roles and projects across startup engineering, AI product strategy, translational research, health technology, and CS education.</p>
+        </div>
+
+        <div class="experience-board" aria-label="Experience highlights">
+          <article class="experience-card">
+            <div class="logo-mark logo-ascend" aria-hidden="true">AC</div>
+            <div>
+              <span class="experience-type">Consulting · Oct 2025 - Present</span>
+              <h2>Ascend Consulting Group</h2>
+              <p class="experience-role">Analyst</p>
+              <ul class="experience-list">
+                <li>Consult for venture-backed AI startups on product strategy and user research.</li>
+                <li>Analyze interviews and engagement data for AI-powered consumer products.</li>
+                <li>Develop recommendations on positioning, growth strategy, and acquisition.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="logo-mark logo-scripps" aria-hidden="true">
+              <img class="logo-img" src="https://www.google.com/s2/favicons?domain=scripps.edu&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>S</span>
+            </div>
+            <div>
+              <span class="experience-type">Research · Jun 2023 - Present</span>
+              <h2>Scripps Research</h2>
+              <p class="experience-role">Translational Research Intern - Data/ML</p>
+              <ul class="experience-list">
+                <li>Analyze multimodal clinical and genomic datasets for RET-positive lung cancer research.</li>
+                <li>Collaborate with Tempus AI scientists on real-world oncology data analyses.</li>
+                <li>Develop computational workflows for precision medicine research under Dr. Jacob New.</li>
+              </ul>
+              <p class="tech-stack">Python · R · SQL · Tempus Lens · Jupyter Notebook · Clinical Genomics</p>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="logo-mark logo-build" aria-hidden="true">
+              <img class="logo-img" src="https://www.google.com/s2/favicons?domain=columbia.edu&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>CB</span>
+            </div>
+            <div>
+              <span class="experience-type">Engineering · Jan 2026 - May 2026</span>
+              <h2>Columbia Build Lab</h2>
+              <p class="experience-role">Startup Engineer · New York City Metropolitan Area</p>
+              <ul class="experience-list">
+                <li>Built investor-facing React dashboards for a Columbia Business School startup.</li>
+                <li>Developed interactive analytics for commercial real estate benchmarking.</li>
+              </ul>
+              <p class="tech-stack">React · Supabase · Git · Figma</p>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <div class="logo-mark logo-inspirigirl" aria-hidden="true">
+              <img class="logo-img inspirigirl-logo-img" src="InspirigirlLogoSquare.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>IG</span>
+            </div>
+            <div>
+              <span class="experience-type">Founder · Dec 2021 - May 2026</span>
+              <h2>Inspirigirl</h2>
+              <p class="experience-role">Founder &amp; Executive Director</p>
+              <ul class="experience-list">
+                <li>Founded a nonprofit providing free computer science education for girls worldwide.</li>
+                <li>Built a community of 500+ students across 13 countries with 30+ volunteer instructors.</li>
+                <li>Designed and taught courses in Python, Java, web development, Swift, and CAD.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card compact">
+            <div class="logo-mark logo-probat" aria-hidden="true">AI</div>
+            <div>
+              <span class="experience-type">Design · Mar 2026 - Apr 2026</span>
+              <h2>Probat AI</h2>
+              <p class="experience-role">UI/UX &amp; Front End Intern</p>
+              <p class="experience-copy">Designed front-end interfaces and UI prototypes for AI-powered applications during CORE Fellowship.</p>
+              <p class="tech-stack">React · Figma · Claude · Cursor</p>
+            </div>
+          </article>
+
+          <article class="experience-card compact">
+            <div class="logo-mark logo-world-bank" aria-hidden="true">
+              <img class="logo-img" src="https://www.google.com/s2/favicons?domain=worldbank.org&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>WB</span>
+            </div>
+            <div>
+              <span class="experience-type">Development finance · Jun 2025 - Jul 2025</span>
+              <h2>The World Bank Group</h2>
+              <p class="experience-role">Intern</p>
+              <p class="experience-copy">Evaluated IFC investment case studies, IMF policy decisions, and emerging market economies with multidisciplinary teams.</p>
+              <p class="tech-stack">Excel · PowerPoint · Financial Modeling · Case Analysis</p>
+            </div>
+          </article>
+
+          <article class="experience-card compact">
+            <div class="logo-mark logo-dartmouth" aria-hidden="true">
+              <img class="logo-img" src="https://www.google.com/s2/favicons?domain=dartmouth-hitchcock.org&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>D</span>
+            </div>
+            <div>
+              <span class="experience-type">Healthcare AI · Jun 2023 - Aug 2023</span>
+              <h2>Dartmouth Hitchcock Medical Center and Clinics</h2>
+              <p class="experience-role">EDIT Intern</p>
+              <p class="experience-copy">Applied machine learning and computer vision techniques to skin cancer diagnosis through the EDIT program.</p>
+              <p class="tech-stack">Python · PyTorch · OpenCV · Jupyter Notebook</p>
+            </div>
+          </article>
+
+          <article class="experience-card compact">
+            <div class="logo-mark logo-gmu" aria-hidden="true">
+              <img class="logo-img" src="https://www.google.com/s2/favicons?domain=gmu.edu&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>GMU</span>
+            </div>
+            <div>
+              <span class="experience-type">Computational biology · Jun 2023 - Aug 2023</span>
+              <h2>George Mason University</h2>
+              <p class="experience-role">ASSIP Intern @ Vaisman Lab</p>
+              <p class="experience-copy">Developed machine learning methods for protein stability prediction and computational drug discovery research.</p>
+              <p class="tech-stack">Python · PyTorch · BioPython · Jupyter Notebook</p>
+            </div>
+          </article>
+
+          <article class="experience-card compact">
+            <div class="logo-mark logo-kwk" aria-hidden="true">
+              <img class="logo-img" src="https://www.google.com/s2/favicons?domain=kodewithklossy.com&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+              <span>KWK</span>
+            </div>
+            <div>
+              <span class="experience-type">App development · Jun 2022 - Jul 2022</span>
+              <h2>Kode With Klossy</h2>
+              <p class="experience-role">App Development Scholar</p>
+              <p class="experience-copy">Built Spot-It, an iOS app connecting users with women's shelters and healthcare resources using geospatial search.</p>
+              <p class="tech-stack">Swift · Xcode · Google Maps SDK · Firebase</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-grid">
+          <a class="proj-card featured" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Product · Health tech</span>
+            <div class="proj-title">Gaitway</div>
+            <div class="proj-meta">A mobility-focused project exploring how better tools can help people understand gait, movement, and care decisions.</div>
+          </a>
+          <a class="proj-card inspirigirl-project" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Community</span>
+            <div class="proj-title">Inspirigirl</div>
+            <div class="proj-meta">Mentoring and programming for young girls in tech, with an emphasis on confidence, creativity, and access.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Research</span>
+            <div class="proj-title">ASSIP Research</div>
+            <div class="proj-meta">Summer research experience connecting computational thinking, biology, and scientific communication.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Creative code</span>
+            <div class="proj-title">Spot-It via Kode With Klossy</div>
+            <div class="proj-meta">An early software project built through Kode With Klossy, combining playful interaction with technical foundations.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Writing</span>
+            <div class="proj-title">Substack</div>
+            <div class="proj-meta">A home for longer reflections on school, technology, health, creativity, and the ideas that keep following me around.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Web</span>
+            <div class="proj-title">Personal website</div>
+            <div class="proj-meta">This evolving portfolio, designed as a small digital studio for projects, writing, and contact.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Research</span>
+            <div class="proj-title">Scripps Research Translational Institute</div>
+            <div class="proj-meta">Summer research program experience in translational science and health-focused innovation.</div>
+          </a>
+          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
+            <span class="proj-tag">Global programs</span>
+            <div class="proj-title">World Bank, IMF, IDB Family Group</div>
+            <div class="proj-meta">Teen summer program exposure to international institutions, policy, and collaborative learning.</div>
+          </a>
+        </div>
+      </section>
+
+      <section id="gallery" class="tab">
+        <div class="section-heading gallery-heading">
+          <p class="eyebrow">Gallery</p>
+          <h1>Small moments, saved in warm light</h1>
+          <p>A visual scrapbook for places, people, projects, and tiny scenes I want to remember.</p>
+        </div>
+
+        <div class="gallery-grid" aria-label="Photo gallery">
+          <figure class="gallery-card hero-photo">
+            <img src="gallery-city-sunset.jpeg" alt="Jasmine Ma standing on a city overlook at sunset" />
+          </figure>
+
+          <figure class="gallery-card">
+            <img src="gallery-pink-wall.jpeg" alt="Jasmine Ma in sunglasses in front of a bright pink wall" />
+          </figure>
+
+          <figure class="gallery-card">
+            <img src="gallery-great-wall.jpeg" alt="Jasmine Ma standing on the Great Wall surrounded by green mountains" />
+          </figure>
+
+          <figure class="gallery-card">
+            <img src="gallery-canyon-view.jpeg" alt="A lush canyon view with traditional rooftops below" />
+          </figure>
+
+          <figure class="gallery-card">
+            <img src="gallery-canyon-cycling.jpeg" alt="Jasmine Ma and a friend posing under a Three Natural Bridges Canyon Cycling sign" />
+          </figure>
+
+          <figure class="gallery-card">
+            <img src="gallery-scripps-statue.jpeg" alt="Jasmine Ma posing in front of a statue and trees while wearing a Scripps Research shirt" />
+          </figure>
+
+          <figure class="gallery-card">
+            <img src="gallery-balloon-arch.jpeg" alt="Two friends laughing under a pink balloon arch" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="contact" class="tab">
+        <div class="contact-layout">
+          <div>
+            <p class="eyebrow">Let's connect</p>
+            <h1 class="contact-title">Have an idea, opportunity, or note?</h1>
+            <p class="contact-copy">
+              I like thoughtful projects, human-centered tools, health technology, and conversations that start with curiosity.
+            </p>
+          </div>
+
+          <div class="contact-stack">
+            <a class="contact-card" href="mailto:jasmine.ma@columbia.edu">
+              <span>Email</span>
+              jasmine.ma@columbia.edu
+            </a>
+            <a class="contact-card" href="https://github.com/mjynix" target="_blank" rel="noreferrer">
+              <span>GitHub</span>
+              @mjynix
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/jasminexma" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              /in/jasminexma
+            </a>
           </div>
         </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="tab">
-        <h1>Projects and Experiences</h1>
-        <p>Coming soon. This will be a grid of projects with links + short writeups.</p>
-
-        <!-- Optional starter cards (you can delete) -->
-        <div class="projects-grid">
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">Spot-It via Kode With Klossy (2023)</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">My new substack!</div>
-            <div class="proj-meta">Coming soon...</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">Gaitway (2024-Present)</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">Inspirigirl (2022-Present)</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">ASSIP Research (2023)</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">My personal website (2026)</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">Scripps Research Translational Institute - Summer Research Program</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-          <a class="proj-card" href="#" target="_blank" rel="noreferrer">
-            <div class="proj-title">World Bank, IMF, IDB Family Group - Teen Summer Program</div>
-            <div class="proj-meta">TBA</div>
-          </a>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="tab">
-        <h1>Contact</h1>
-        <p>
-          Best way to reach me: <a href="mailto:jasmine.ma@columbia.edu">jasmine.ma@columbia.edu</a>
-        </p>
-        <p>
-          You can also find me on <a href="https://github.com/mjynix" target="_blank" rel="noreferrer">GitHub</a>.
-        </p>
       </section>
     </main>
   </div>
