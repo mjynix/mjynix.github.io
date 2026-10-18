@@ -1,0 +1,27 @@
+name: Sync Goodreads
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/sync_goodreads.py
+      - name: Commit if changed
+        run: |
+          git diff --quiet -- books.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add books.json
+          git commit -m "Sync Goodreads shelves"
+          git push

@@ -1,113 +1,63 @@
-// ===== Intro / Typewriter =====
-const splash = document.getElementById("splash");
-const site = document.getElementById("site");
-const typeTextEl = document.getElementById("typeText");
-const skipBtn = document.getElementById("skipIntro");
-
-const fullText = "jasmine ma";
-const typeSpeed = 110;     // ms per character
-const holdAfterTyping = 450; // pause after finished typing
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+// Masthead date, e.g. "Sunday, October 18, 2026"
+const today = document.getElementById("today");
+if (today) {
+  today.textContent = new Date().toLocaleDateString("en-US", {
+    weekday: "long", year: "numeric", month: "long", day: "numeric",
+  });
 }
 
-async function typeWriter(text) {
-  typeTextEl.textContent = "";
-  for (let i = 0; i < text.length; i++) {
-    typeTextEl.textContent += text[i];
-    await sleep(typeSpeed);
-  }
+// Books page: render shelves from books.json (synced daily from Goodreads
+// by .github/workflows/goodreads.yml).
+const shelves = document.querySelectorAll("[data-shelf]");
+const profileUrl = "https://www.goodreads.com/user/show/152733163-jasmine-ma";
+
+function year(published) {
+  const n = parseInt(published, 10);
+  if (!n) return "";
+  return n < 0 ? `${-n} BCE` : String(n);
 }
 
-async function endIntro() {
-  // Reveal site
-  site.classList.remove("hidden");
-  site.classList.add("reveal");
+function bookHTML(book) {
+  const el = document.createElement("a");
+  el.className = "book";
+  el.href = book.url;
+  el.target = "_blank";
+  el.rel = "noreferrer";
 
-  // Fade splash out
-  splash.classList.add("fade-out");
-
-  // Remove splash from screen readers after animation
-  await sleep(750);
-  splash.style.display = "none";
-}
-
-async function runIntro() {
-  // If user prefers reduced motion, skip animations
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) {
-    typeTextEl.textContent = fullText;
-    await sleep(150);
-    endIntro();
-    return;
+  const cover = document.createElement(book.cover ? "img" : "span");
+  cover.className = "book-cover";
+  if (book.cover) {
+    cover.src = book.cover;
+    cover.alt = `Cover of ${book.title}`;
+    cover.loading = "lazy";
   }
 
-  await typeWriter(fullText);
-  await sleep(holdAfterTyping);
-  endIntro();
+  const title = document.createElement("span");
+  title.className = "book-title";
+  title.textContent = book.title;
+
+  const meta = document.createElement("span");
+  meta.className = "book-meta";
+  meta.textContent = [book.author, year(book.published)].filter(Boolean).join(" · ");
+
+  el.append(cover, title, meta);
+  return el;
 }
 
-skipBtn?.addEventListener("click", endIntro);
-splash?.addEventListener("click", (e) => {
-  // Clicking anywhere on splash skips (except the inner text selection)
-  if (e.target?.id !== "typeText") endIntro();
-});
-
-runIntro();
-
-
-// ===== Tabs (your existing functionality) =====
-const buttons = document.querySelectorAll(".tab-btn");
-const tabs = document.querySelectorAll(".tab");
-const tabJumps = document.querySelectorAll(".tab-jump");
-
-function activateTab(id) {
-  if (!id) return;
-
-  buttons.forEach(b => b.classList.remove("active"));
-  document.querySelector(`.tab-btn[data-tab="${id}"]`)?.classList.add("active");
-
-  tabs.forEach(t => t.classList.remove("active"));
-  document.getElementById(id)?.classList.add("active");
-}
-
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    activateTab(btn.dataset.tab);
-  });
-});
-
-tabJumps.forEach(btn => {
-  btn.addEventListener("click", () => {
-    activateTab(btn.dataset.tab);
-  });
-});
-
-
-// ===== Scroll reveal / motion polish =====
-const revealItems = document.querySelectorAll(
-  ".hero-copy, .portrait-card, .panel, .experience-card, .proj-card, .gallery-card, .contact-card"
-);
-
-revealItems.forEach((item, index) => {
-  item.classList.add("revealable");
-  item.style.setProperty("--reveal-delay", `${Math.min(index * 35, 220)}ms`);
-});
-
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (reduceMotion || !("IntersectionObserver" in window)) {
-  revealItems.forEach(item => item.classList.add("in-view"));
-} else {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        revealObserver.unobserve(entry.target);
-      }
+if (shelves.length) {
+  fetch("books.json", { cache: "no-cache" })
+    .then(res => res.json())
+    .then(data => {
+      shelves.forEach(shelf => {
+        const books = data[shelf.dataset.shelf] || [];
+        shelf.replaceChildren(...books.map(bookHTML));
+        if (!books.length) shelf.innerHTML = '<p class="muted">Nothing here right now.</p>';
+      });
+      document.getElementById("syncNote").textContent = `Synced from Goodreads · ${data.updated}`;
+    })
+    .catch(() => {
+      shelves.forEach(shelf => {
+        shelf.innerHTML = `<p class="muted">Couldn't load books. See them on <a href="${profileUrl}">Goodreads</a>.</p>`;
+      });
     });
-  }, { threshold: 0.12 });
-
-  revealItems.forEach(item => revealObserver.observe(item));
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="crop fish.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What Jasmine Ma is reading now, and her favorite books, from Goodreads." />
+  <title>books · jasmine ma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261018-grey2" />
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead" id="top">
+      <div class="mast-row">
+        <a class="nameplate" href="index.html" aria-label="Jasmine Ma home">Jasmine Ma</a>
+        <div class="mast-meta">
+          <span id="today"></span>
+          <span>New York City</span>
+        </div>
+      </div>
+
+      <nav class="sections" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="books.html" aria-current="page">Books</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="books">
+      <section class="section first">
+        <header class="section-head">
+          <p class="section-label">Currently reading</p>
+          <a class="section-aside" href="https://www.goodreads.com/user/show/152733163-jasmine-ma" target="_blank" rel="noreferrer">Goodreads</a>
+        </header>
+        <div class="reading-list" data-shelf="currentlyReading">
+          <p class="muted">Loading from Goodreads…</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-head">
+          <p class="section-label">Favorites</p>
+          <span class="section-aside">Rated five stars</span>
+        </header>
+        <div class="book-grid" data-shelf="favorites">
+          <p class="muted">Loading from Goodreads…</p>
+        </div>
+      </section>
+
+      <p class="sync-note" id="syncNote"></p>
+    </main>
+
+    <footer class="colophon">
+      <span>Jasmine Ma</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
