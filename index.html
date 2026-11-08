@@ -8,65 +8,59 @@
   <title>jasmine ma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261018-grey2" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Gelasio:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261108-single" />
 </head>
 
 <body>
   <div class="page">
-    <header class="masthead" id="top">
-      <div class="mast-row">
-        <a class="nameplate" href="index.html" aria-label="Jasmine Ma home">Jasmine Ma</a>
-        <div class="mast-meta">
-          <span id="today"></span>
-          <span>New York City</span>
-        </div>
-      </div>
-
-      <nav class="sections" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#gallery">Gallery</a>
-        <a href="books.html">Books</a>
-        <a href="#contact">Contact</a>
+    <header class="site-head" id="top">
+      <nav class="elsewhere" aria-label="Elsewhere">
+        <a href="https://www.goodreads.com/user/show/152733163-jasmine-ma" target="_blank" rel="noreferrer">Goodreads</a>
+        <a href="https://github.com/mjynix" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jasminexma" target="_blank" rel="noreferrer">LinkedIn</a>
       </nav>
+      <a class="wordmark" href="index.html" aria-label="Jasmine Ma home">jasmine ma<small>columbia university</small></a>
+      <a class="head-fish" href="index.html" aria-hidden="true" tabindex="-1"><img src="crop fish.png" alt="" /></a>
     </header>
 
+    <nav class="section-box" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="books.html">Books</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <main>
-      <!-- About -->
-      <section id="about" class="front">
-        <div class="front-grid">
-          <div class="col lead">
-            <p class="kicker">Computer Science and Mathematics undergrad @ Columbia University</p>
-            <h1 class="headline-xl">Hi, I'm Jasmine!</h1>
-            <p class="deck">
-              Enjoying college at Columbia. Interested in engineering for domains across healthcare, finance, and entrepreneurship.
-            </p>
-            <p class="text-links">
-              <a href="mailto:jasmine.ma@columbia.edu">Contact me</a>
-              <a href="#projects">View work</a>
-            </p>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-cell">
+          <img src="gallery-canyon-view.jpeg" alt="A lush canyon view with traditional rooftops below" />
+          <div class="hero-title">
+            <h1><span>Hi, I'm</span><br /><span class="strong">Jasmine!</span></h1>
+            <p class="strip">Computer Science and Mathematics undergrad @ Columbia University</p>
+            <p class="strip small">Enjoying college at Columbia. Interested in engineering for domains across healthcare, finance, and entrepreneurship.</p>
           </div>
+        </div>
+      </section>
 
-          <figure class="col photo">
-            <img class="portrait" src="portrait.jpg" alt="Portrait of Jasmine Ma" />
-          </figure>
-
-          <aside class="col sidebar" aria-label="About, education and background">
-            <article class="story">
-              <p class="label">What I care about</p>
-              <p>
-                I'm interested in product, design, and systems that make life easier, especially at the intersection of healthcare and computing. Outside of school, I'm an avid dancer, pianist, and mentor for young girls in tech.
-              </p>
-            </article>
-
-            <article class="story">
+      <!-- About -->
+      <section id="about" class="section split">
+        <figure class="split-photo">
+          <img class="portrait" src="portrait.jpg" alt="Portrait of Jasmine Ma" />
+        </figure>
+        <div class="split-copy">
+          <h2 class="title">What I care about</h2>
+          <p class="plum">
+            I'm interested in product, design, and systems that make life easier, especially at the intersection of healthcare and computing. Outside of school, I'm an avid dancer, pianist, and mentor for young girls in tech.
+          </p>
+          <div class="pair">
+            <article>
               <p class="label">Education</p>
-              <h2 class="headline-m">Columbia University</h2>
+              <h3 class="item-name">Columbia University</h3>
               <p class="muted">New York City</p>
             </article>
-
-            <article class="story">
+            <article>
               <p class="label">Previously</p>
               <ul class="plain-list">
                 <li>Thomas Jefferson High School for Science and Technology</li>
@@ -75,24 +69,26 @@
                 <li>School of Systems Biology @ George Mason University</li>
               </ul>
             </article>
-          </aside>
+          </div>
+          <p class="boxed-links">
+            <a href="mailto:jasmine.ma@columbia.edu">Contact me</a>
+            <a href="#projects">View work</a>
+          </p>
         </div>
       </section>
 
       <!-- Projects -->
       <section id="projects" class="section">
-        <header class="section-head">
-          <p class="section-label">Projects</p>
-        </header>
+        <div class="split">
         <div class="section-intro">
-          <h2 class="headline-l">Projects, research, and experiences</h2>
+          <h2 class="title">Projects, research, and experiences</h2>
           <p class="muted">Selected roles and projects across AI product strategy, health technology, and CS education.</p>
         </div>
 
-        <div class="major-grid" aria-label="Experience highlights">
+        <div class="experience" aria-label="Experience">
           <article class="entry">
-            <p class="kicker"><span class="logo-mark" aria-hidden="true">AC</span>Consulting · Oct 2025 - Present</p>
-            <h3 class="headline-m">Ascend Consulting Group</h3>
+            <p class="kicker">Consulting · Oct 2025 - Present</p>
+            <h3 class="item-name">Ascend Consulting Group</h3>
             <p class="role">Analyst</p>
             <ul class="entry-list">
               <li>Consult for venture-backed AI startups on product strategy and user research.</li>
@@ -102,13 +98,8 @@
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="https://www.google.com/s2/favicons?domain=scripps.edu&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>S</span>
-              </span>Research · Jun 2023 - Present
-            </p>
-            <h3 class="headline-m">Scripps Research</h3>
+            <p class="kicker">Research · Jun 2023 - Present</p>
+            <h3 class="item-name">Scripps Research</h3>
             <p class="role">Translational Research Intern - Data/ML</p>
             <ul class="entry-list">
               <li>Analyze multimodal clinical and genomic datasets for RET-positive lung cancer research.</li>
@@ -119,13 +110,8 @@
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="https://www.google.com/s2/favicons?domain=columbia.edu&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>CB</span>
-              </span>Engineering · Jan 2026 - May 2026
-            </p>
-            <h3 class="headline-m">Columbia Build Lab</h3>
+            <p class="kicker">Engineering · Jan 2026 - May 2026</p>
+            <h3 class="item-name">Columbia Build Lab</h3>
             <p class="role">Startup Engineer · New York City Metropolitan Area</p>
             <ul class="entry-list">
               <li>Built investor-facing React dashboards for a Columbia Business School startup.</li>
@@ -135,13 +121,9 @@
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="InspirigirlLogoSquare.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>IG</span>
-              </span>Founder · Dec 2021 - May 2026
-            </p>
-            <h3 class="headline-m">Inspirigirl</h3>
+            <p class="kicker">Founder · Dec 2021 - May 2026</p>
+            <img class="entry-logo" src="InspirigirlLogoSquare.jpg" alt="Inspirigirl logo" loading="lazy" />
+            <h3 class="item-name">Inspirigirl</h3>
             <p class="role">Founder &amp; Executive Director</p>
             <ul class="entry-list">
               <li>Founded a nonprofit providing free computer science education for girls worldwide.</li>
@@ -149,162 +131,58 @@
               <li>Designed and taught courses in Python, Java, web development, Swift, and CAD.</li>
             </ul>
           </article>
-        </div>
-
-        <div class="briefs" aria-label="More experience">
+        
           <article class="entry">
-            <p class="kicker"><span class="logo-mark" aria-hidden="true">AI</span>Design · Mar 2026 - Apr 2026</p>
-            <h3 class="headline-s">Probat AI</h3>
+            <p class="kicker">Design · Mar 2026 - Apr 2026</p>
+            <h3 class="item-name">Probat AI</h3>
             <p class="role">UI/UX &amp; Front End Intern</p>
             <p>Designed front-end interfaces and UI prototypes for AI-powered applications during CORE Fellowship.</p>
             <p class="stack">React · Figma · Claude · Cursor</p>
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="https://www.google.com/s2/favicons?domain=worldbank.org&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>WB</span>
-              </span>Development finance · Jun 2025 - Jul 2025
-            </p>
-            <h3 class="headline-s">The World Bank Group</h3>
+            <p class="kicker">Development finance · Jun 2025 - Jul 2025</p>
+            <h3 class="item-name">The World Bank Group</h3>
             <p class="role">Intern</p>
             <p>Evaluated IFC investment case studies, IMF policy decisions, and emerging market economies with multidisciplinary teams.</p>
             <p class="stack">Excel · PowerPoint · Financial Modeling · Case Analysis</p>
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="https://www.google.com/s2/favicons?domain=dartmouth-hitchcock.org&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>D</span>
-              </span>Healthcare AI · Jun 2023 - Aug 2023
-            </p>
-            <h3 class="headline-s">Dartmouth Hitchcock Medical Center and Clinics</h3>
+            <p class="kicker">Healthcare AI · Jun 2023 - Aug 2023</p>
+            <h3 class="item-name">Dartmouth Hitchcock Medical Center and Clinics</h3>
             <p class="role">EDIT Intern</p>
             <p>Applied machine learning and computer vision techniques to skin cancer diagnosis through the EDIT program.</p>
             <p class="stack">Python · PyTorch · OpenCV · Jupyter Notebook</p>
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="https://www.google.com/s2/favicons?domain=gmu.edu&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>GMU</span>
-              </span>Computational biology · Jun 2023 - Aug 2023
-            </p>
-            <h3 class="headline-s">George Mason University</h3>
+            <p class="kicker">Computational biology · Jun 2023 - Aug 2023</p>
+            <h3 class="item-name">George Mason University</h3>
             <p class="role">ASSIP Intern @ Vaisman Lab</p>
             <p>Developed machine learning methods for protein stability prediction and computational drug discovery research.</p>
             <p class="stack">Python · PyTorch · BioPython · Jupyter Notebook</p>
           </article>
 
           <article class="entry">
-            <p class="kicker">
-              <span class="logo-mark" aria-hidden="true">
-                <img class="logo-img" src="https://www.google.com/s2/favicons?domain=kodewithklossy.com&amp;sz=128" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-                <span>KWK</span>
-              </span>App development · Jun 2022 - Jul 2022
-            </p>
-            <h3 class="headline-s">Kode With Klossy</h3>
+            <p class="kicker">App development · Jun 2022 - Jul 2022</p>
+            <h3 class="item-name">Kode With Klossy</h3>
             <p class="role">App Development Scholar</p>
             <p>Built Spot-It, an iOS app connecting users with women's shelters and healthcare resources using geospatial search.</p>
             <p class="stack">Swift · Xcode · Google Maps SDK · Firebase</p>
           </article>
         </div>
 
-        <header class="section-head sub">
-          <p class="section-label">Selected work</p>
-        </header>
-        <div class="project-grid">
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Product · Health tech</span>
-            <span class="headline-s">Gaitway</span>
-            <span class="summary">A mobility-focused project exploring how better tools can help people understand gait, movement, and care decisions.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Community</span>
-            <span class="headline-s">Inspirigirl</span>
-            <span class="summary">Mentoring and programming for young girls in tech, with an emphasis on confidence, creativity, and access.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Research</span>
-            <span class="headline-s">ASSIP Research</span>
-            <span class="summary">Summer research experience connecting computational thinking, biology, and scientific communication.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Creative code</span>
-            <span class="headline-s">Spot-It via Kode With Klossy</span>
-            <span class="summary">An early software project built through Kode With Klossy, combining playful interaction with technical foundations.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Writing</span>
-            <span class="headline-s">Substack</span>
-            <span class="summary">A home for longer reflections on school, technology, health, creativity, and the ideas that keep following me around.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Web</span>
-            <span class="headline-s">Personal website</span>
-            <span class="summary">This evolving portfolio, designed as a small digital studio for projects, writing, and contact.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Research</span>
-            <span class="headline-s">Scripps Research Translational Institute</span>
-            <span class="summary">Summer research program experience in translational science and health-focused innovation.</span>
-          </a>
-          <a class="project" href="#" target="_blank" rel="noreferrer">
-            <span class="kicker">Global programs</span>
-            <span class="headline-s">World Bank, IMF, IDB Family Group</span>
-            <span class="summary">Teen summer program exposure to international institutions, policy, and collaborative learning.</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- Gallery -->
-      <section id="gallery" class="section">
-        <header class="section-head">
-          <p class="section-label">Gallery</p>
-        </header>
-        <div class="section-intro">
-          <h2 class="headline-l">Small moments, saved in warm light</h2>
-          <p class="muted">A visual scrapbook for places, people, projects, and tiny scenes I want to remember.</p>
-        </div>
-
-        <div class="gallery-grid" aria-label="Photo gallery">
-          <figure class="shot shot-lead">
-            <img src="gallery-city-sunset.jpeg" alt="Jasmine Ma standing on a city overlook at sunset" />
-          </figure>
-          <figure class="shot">
-            <img src="gallery-pink-wall.jpeg" alt="Jasmine Ma in sunglasses in front of a bright pink wall" loading="lazy" />
-          </figure>
-          <figure class="shot">
-            <img src="gallery-great-wall.jpeg" alt="Jasmine Ma standing on the Great Wall surrounded by green mountains" loading="lazy" />
-          </figure>
-          <figure class="shot">
-            <img src="gallery-canyon-view.jpeg" alt="A lush canyon view with traditional rooftops below" loading="lazy" />
-          </figure>
-          <figure class="shot">
-            <img src="gallery-canyon-cycling.jpeg" alt="Jasmine Ma and a friend posing under a Three Natural Bridges Canyon Cycling sign" loading="lazy" />
-          </figure>
-          <figure class="shot">
-            <img src="gallery-scripps-statue.jpeg" alt="Jasmine Ma posing in front of a statue and trees while wearing a Scripps Research shirt" loading="lazy" />
-          </figure>
-          <figure class="shot">
-            <img src="gallery-balloon-arch.jpeg" alt="Two friends laughing under a pink balloon arch" loading="lazy" />
-          </figure>
         </div>
       </section>
 
       <!-- Contact -->
       <section id="contact" class="section">
-        <header class="section-head">
-          <p class="section-label">Contact</p>
-        </header>
 
         <div class="contact-grid">
           <div>
             <p class="kicker">Let's connect</p>
-            <h2 class="headline-l">Have an idea, opportunity, or note?</h2>
+            <h2 class="title">Have an idea, opportunity, or note?</h2>
             <p class="muted">
               Send me good ideas, odd ideas, job offers. Thx!!!
             </p>
@@ -329,7 +207,7 @@
     </main>
 
     <footer class="colophon">
-      <span>Jasmine Ma</span>
+      <img src="crop fish.png" alt="" />
       <a href="#top">Back to top</a>
     </footer>
   </div>
