@@ -1,5 +1,5 @@
 /* After the Maison Millais gift guide: white page, one big photo,
-   Helvetica headings, plum serif paragraphs, hairlines, boxed arrow links. */
+   Helvetica headings, hairlines, boxed arrow links. */
 
 :root {
   --paper: #ffffff;
@@ -145,27 +145,24 @@ dd {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 85%;
   filter: grayscale(1);
 }
 
 .hero-title {
   position: absolute;
   z-index: 4;
-  top: 36%;
-  left: 50%;
-  width: min(570px, 92%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 32%;
+  left: 4%;
+  width: min(570px, 46%);
+  transform: translateY(-50%);
 }
 
 .hero-title h1 {
   font-family: var(--sans);
   font-size: clamp(26px, 3.4vw, 44px);
   font-weight: 400;
-  letter-spacing: 3px;
   line-height: 1.3;
-  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .hero-title h1 span {
@@ -173,10 +170,6 @@ dd {
   margin-bottom: 6px;
   padding: 0 18px;
   background: rgba(255, 255, 255, 0.86);
-}
-
-.hero-title h1 .strong {
-  font-weight: 700;
 }
 
 .strip {
@@ -237,10 +230,8 @@ main {
   gap: 18px;
 }
 
-.plum,
-.section-intro .muted,
-.contact-grid .muted {
-  color: var(--plum);
+.blurb {
+  color: var(--ink);
   font-family: var(--serif);
   font-size: 16px;
   line-height: 1.55;
@@ -264,7 +255,6 @@ main {
 .section-aside,
 .label,
 .kicker,
-.stack,
 dt {
   color: var(--muted);
   font-family: var(--sans);
@@ -305,8 +295,7 @@ dt {
   border-left: 1px solid var(--hairline);
 }
 
-.plain-list,
-.entry-list {
+.plain-list {
   padding: 0;
   list-style: none;
 }
@@ -373,22 +362,8 @@ dt {
   border-top: 0;
 }
 
-.entry-logo {
-  float: right;
-  width: 48px;
-  margin-left: 12px;
-}
-
 .role {
   font-style: italic;
-}
-
-.entry-list {
-  margin-top: 4px;
-}
-
-.stack {
-  margin-top: 6px;
 }
 
 /* ---------- Contact ---------- */
@@ -495,14 +470,6 @@ dt {
   width: 92px;
 }
 
-/* ---------- Narrow ---------- */
-
-@media (max-width: 900px) {
-  .hero-cell {
-    aspect-ratio: 4 / 3;
-  }
-}
-
 /* ---------- Phone ---------- */
 
 @media (max-width: 720px) {
@@ -535,12 +502,27 @@ dt {
     padding: 0 16px;
   }
 
-  .hero-cell {
-    aspect-ratio: 1 / 1;
+  /* no room beside the photo, so the title sits under it */
+  .hero-title {
+    position: static;
+    width: auto;
+    margin-top: 12px;
+    transform: none;
   }
 
-  .hero-title {
-    width: calc(100% - 16px);
+  .hero-cell {
+    aspect-ratio: auto;
+  }
+
+  .hero-cell img {
+    position: static;
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .hero-title h1 span,
+  .strip {
+    padding: 0;
   }
 
   .strip {
