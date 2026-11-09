@@ -10,33 +10,40 @@ function year(published) {
 }
 
 function bookElement(book) {
-  const el = document.createElement("a");
+  const el = document.createElement("article");
   el.className = "book";
-  el.href = book.url;
-  el.target = "_blank";
-  el.rel = "noreferrer";
+
+  const link = document.createElement("a");
+  link.className = "book-cover-link";
+  link.href = book.url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.setAttribute("aria-label", `${book.title} on Goodreads`);
 
   const cover = document.createElement(book.cover ? "img" : "span");
   cover.className = "book-cover";
   if (book.cover) {
+    // Book-shaped covers fill the frame; anything else (like a wide picture
+    // book) shrinks to fit so it isn't cropped.
+    cover.addEventListener("load", () => {
+      const ratio = cover.naturalWidth / cover.naturalHeight;
+      cover.classList.toggle("odd-shape", ratio > 0.8 || ratio < 0.55);
+    });
     cover.src = book.cover;
     cover.alt = "";
     cover.loading = "lazy";
   }
+  link.append(cover);
 
-  const title = document.createElement("span");
+  const title = document.createElement("h3");
   title.className = "book-title";
   title.textContent = book.title;
 
-  const meta = document.createElement("span");
+  const meta = document.createElement("p");
   meta.className = "book-meta";
   meta.textContent = [book.author, year(book.published)].filter(Boolean).join(" · ");
 
-  const link = document.createElement("span");
-  link.className = "book-link";
-  link.textContent = "Goodreads";
-
-  el.append(cover, title, meta, link);
+  el.append(link, title, meta);
   return el;
 }
 

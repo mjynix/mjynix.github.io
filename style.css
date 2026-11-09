@@ -313,7 +313,6 @@ dt {
 }
 
 .boxed-links a,
-.book-link,
 .contact-list dd a {
   display: flex;
   justify-content: space-between;
@@ -330,7 +329,6 @@ dt {
 }
 
 .boxed-links a::after,
-.book-link::after,
 .contact-list dd a::after {
   content: "\2192";
   font-size: 15px;
@@ -338,7 +336,6 @@ dt {
 }
 
 .boxed-links a:hover,
-.book:hover .book-link,
 .contact-list dd a:hover {
   background: var(--ink);
   color: var(--paper);
@@ -409,7 +406,6 @@ dt {
   align-items: flex-start;
   padding: 0 20px;
   border-left: 1px solid var(--hairline);
-  text-decoration: none;
 }
 
 .book:nth-child(4n + 1) {
@@ -417,30 +413,44 @@ dt {
   border-left: 0;
 }
 
-.book-cover {
+.book-cover-link {
+  display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  max-width: 220px;
+}
+
+/* every cover gets the same 2:3 frame */
+.book-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.book-cover.odd-shape {
   object-fit: contain;
   object-position: left bottom;
+}
+
+.book-cover-link:hover .book-cover,
+.book-cover-link:focus-visible .book-cover {
+  filter: none;
 }
 
 .book-title {
   margin-top: 14px;
   font-family: var(--sans);
   font-size: 12px;
+  font-weight: 400;
   line-height: 1.35;
 }
 
 .book-meta {
-  margin: 2px 0 12px;
+  margin: 2px 0 0;
   color: var(--muted);
   font-family: var(--sans);
   font-size: 11px;
-}
-
-.book-link {
-  width: min(160px, 100%);
-  margin-top: auto;
 }
 
 .sync-note {
