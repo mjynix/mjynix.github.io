@@ -17,7 +17,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 USER_ID = "152733163"
-PROFILE_URL = f"https://www.goodreads.com/user/show/{USER_ID}-jasmine-ma"
 WIDGET = (
     "https://www.goodreads.com/review/custom_widget/{user}.Books"
     "?shelf={shelf}&num_books=200&sort=date_added&order=d"
@@ -70,7 +69,6 @@ def main():
     if not read:
         raise SystemExit("Goodreads returned an empty read shelf; keeping books.json as is")
     data = {
-        "profile": PROFILE_URL,
         "favorites": [b for b in read if b["rating"] == 5],
         "currentlyReading": fetch_shelf("currently-reading"),
     }

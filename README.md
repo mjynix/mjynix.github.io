@@ -12,5 +12,7 @@ Hey! This is my personal portfolio website featuring programming work, writing, 
 
 ## Structure
 - `index.html` – main site layout
+- `books.html` – Goodreads shelves
 - `style.css` – styling
-- `script.js` – interactivity
+- `script.js` – renders the shelves from `books.json`
+- `scripts/sync_goodreads.py` – updates `books.json` daily through a GitHub Action

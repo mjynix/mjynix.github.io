@@ -188,10 +188,6 @@ dd {
 
 /* ---------- Sections ---------- */
 
-main {
-  display: block;
-}
-
 .section {
   scroll-margin-top: 72px;
   max-width: 1320px;
