@@ -210,6 +210,11 @@ dd {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+  filter: grayscale(1);
+}
+
+.portrait:hover {
+  filter: none;
 }
 
 .title,
